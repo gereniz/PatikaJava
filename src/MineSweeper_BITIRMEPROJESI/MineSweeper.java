@@ -50,7 +50,7 @@ public class MineSweeper {
 		
 	}
 	
-	//tala oluşturma
+	//tarla oluşturma
 	String[][] field(){
 		
 		String[][] nagivation = new String[this.row][this.column];
@@ -91,6 +91,8 @@ public class MineSweeper {
 			System.out.print("Sütun giriniz  : ");
 			int columnUser = input.nextInt();
 			
+			rowUser = rowUser -1;
+			columnUser = columnUser-1;
 			if(columnUser >= this.column || rowUser >= this.row) {
 				System.out.println("Sınırları aştınız.Tekrar satır ve sütun giriniz.");
 			}
