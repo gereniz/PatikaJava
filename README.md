@@ -10,7 +10,7 @@
 - [Ödev - Vücut Kitle İndeksi Hesaplayan Program](https://github.com/gereniz/PatikaJava/tree/main/src/VucutKitleIndeksi)
 - [Ödev - Manav Kasa Programı](https://github.com/gereniz/PatikaJava/tree/main/src/Manav)
 
-##Koşullu İfadeler ve Kod Blokları
+## Koşullu İfadeler ve Kod Blokları
 
 - [Pratik - Hesap Makinesi](https://github.com/gereniz/PatikaJava/tree/main/src/HesapMakinesi)
 - [Pratik - Kullanıcı Girişi](https://github.com/gereniz/PatikaJava/tree/main/src/KullaniciGirisi)
@@ -22,11 +22,11 @@
 - [Ödev - Çin Zodyağı Hesaplama](https://github.com/gereniz/PatikaJava/tree/main/src/CinZodyagi)
 - [Ödev - Artık YIl Hesaplama](https://github.com/gereniz/PatikaJava/tree/main/src/ArtikYil)
 
-##Döngüler
+## Döngüler
 
 - [Pratik - Girilen Sayıya Kadar Olan Çift Sayıları Bulan Program](https://github.com/gereniz/PatikaJava/tree/main/src/TamBölünmeBulma)
 - [Pratik - Tek Sayıların Toplamını Program](https://github.com/gereniz/PatikaJava/tree/main/src/TekSayiGireneKadarSayilarinBölünmeToplami)
-- [Pratik - Girilen Sayıdan Küçük 2’nin Kuvvetlerini Bulan Program](hhttps://github.com/gereniz/PatikaJava/tree/main/src/GirilenSayidanKucukKuvvetBulma)
+- [Pratik - Girilen Sayıdan Küçük 2’nin Kuvvetlerini Bulan Program](https://github.com/gereniz/PatikaJava/tree/main/src/GirilenSayidanKucukKuvvetBulma)
 - [Pratik - Faktöriyel Hesaplayan Program](https://github.com/gereniz/PatikaJava/tree/main/src/KombinasyonBulma)
 - [Pratik - Üslü Sayı Hesaplayan Program](https://github.com/gereniz/PatikaJava/tree/main/src/UsluSayiBulma)
 - [Pratik - Armstrong Sayıları Bulan Program](https://github.com/gereniz/PatikaJava/tree/main/src/BasamakSayisiBulma)
@@ -40,7 +40,7 @@
 - [Ödev - 1-100 Arasındaki Asal Sayıları Bulan Program](https://github.com/gereniz/PatikaJava/tree/main/src/AsalSayiBulma)
 - [Ödev - Fibonacci Serisi](https://github.com/gereniz/PatikaJava/tree/main/src//FibonacciSerisi)
 
-##Metotlar
+## Metotlar
 
 - [Pratik - Palindrom Sayılar](https://github.com/gereniz/PatikaJava/tree/main/src/PalindromSayi)
 - [Pratik - Recursive ile Fibonacci Serisi Bulan Program](https://github.com/gereniz/PatikaJava/tree/main/src/FibonacciSerisiRecursive)
@@ -49,13 +49,13 @@
 - [Ödev - Asal Sayı Bulan Program](https://github.com/gereniz/PatikaJava/tree/main/src/AsalSayiRecursive)
 - [Ödev - Desene Göre Metot Oluşturma](https://github.com/gereniz/PatikaJava/tree/main/src/DesenRecursive)
 
-##Sınıflar
+## Sınıflar
 
 - [Pratik - Öğrenci Bilgi Sistemi](https://github.com/gereniz/PatikaJava/tree/main/src/OgrenciBilgiSistemi)
 - [Pratik - Boks Oyunu](https://github.com/gereniz/PatikaJava/tree/main/src/BoksMaci)
 - [Ödev - Maaş Hesaplayıcı](hhttps://github.com/gereniz/PatikaJava/tree/main/src/MaasHesaplayici)
 
-##Diziler
+## Diziler
 
 - [Pratik - Dizideki Elemanların Ortalamasını Bulan Program](https://github.com/gereniz/PatikaJava/tree/main/src/HarmonikOrtalamaDizi)
 - [Pratik - Dizideki Maksimum ve Minimum Değerleri Bulan Program](https://github.com/gereniz/PatikaJava/tree/main/src/YakinSayiBulmaDizi)
@@ -66,12 +66,12 @@
 - [Ödev - Matris Transpozunu Bulma](https://github.com/gereniz/PatikaJava/tree/main/src/MatrisTranspozu)
 
 
-##Diğer Konular
+## Diğer Konular
 
 - [Pratik - Sayı Tahmin Oyunu](https://github.com/gereniz/PatikaJava/tree/main/src/SayiTahmin)
 - [Pratik - Palindromik Kelimleri Bulan Program](https://github.com/gereniz/PatikaJava/tree/main/src/PalindromikKelime)
 
-##Bitirme Projesi
+## Bitirme Projesi
 
 - [Mayın Tarlası Oyunu](https://github.com/gereniz/PatikaJava/tree/main/src/MineSweeper_BITIRMEPROJESI)
 
