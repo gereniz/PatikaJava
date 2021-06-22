@@ -53,7 +53,7 @@
 
 - [Pratik - Öğrenci Bilgi Sistemi](https://github.com/gereniz/PatikaJava/tree/main/src/OgrenciBilgiSistemi)
 - [Pratik - Boks Oyunu](https://github.com/gereniz/PatikaJava/tree/main/src/BoksMaci)
-- [Ödev - Maaş Hesaplayıcı](hhttps://github.com/gereniz/PatikaJava/tree/main/src/MaasHesaplayici)
+- [Ödev - Maaş Hesaplayıcı](https://github.com/gereniz/PatikaJava/tree/main/src/MaasHesaplayici)
 
 ## Diziler
 
