@@ -93,7 +93,7 @@ public class MineSweeper {
 			
 			rowUser = rowUser -1;
 			columnUser = columnUser-1;
-			if(columnUser >= this.column || rowUser >= this.row) {
+			if(columnUser<0 || rowUser<0 || columnUser >= this.column || rowUser >= this.row) {
 				System.out.println("Sınırları aştınız.Tekrar satır ve sütun giriniz.");
 			}
 			else {
