@@ -78,3 +78,9 @@
 # PatikaJavaOOP
 
 [Üniversite Yönetim Sistemi](https://github.com/gereniz/PatikaJava101/tree/main/src/JavaOOP/UniversiteYonetimSistemi.png)
+
+# PatikaJava102
+
+## Nested Sınıflar,Generic Yapılar
+
+[Ödev - Liste Sınıfı Yapmak](https://github.com/gereniz/PatikaJava/tree/main/src/ListeSinifi)
