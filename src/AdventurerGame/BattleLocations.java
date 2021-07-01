@@ -18,57 +18,62 @@ public abstract class BattleLocations  extends Locations{
 
 	@Override
 	public boolean onLocation() {
+		
 		int monsterNumber = this.randomMonsterNumber();
 		System.out.println("Şu an buradasın-> " + this.getName());
 		System.out.println();
 		System.out.println("Dikkatli ol !! Burada " +monsterNumber+ " tane " + getMonster().getName() + " yaşıyor !!\n");
-		int i =0;
 		
-			System.out.println("\n 1 - Savaş \n 2 - Kaç  \n");
-			System.out.print("Girilen Değer : ");
-			int selectCase= input.nextInt();
-			while(i == 0) {
+		System.out.println("\n 1 - Savaş \n 2 - Kaç  \n !!GİRİLEN DEĞER YANLIŞ OLURSA KAÇMIŞ SAYILACAKSIN !! ");
+		System.out.print("Girilen Değer : ");
+		int selectCase= input.nextInt();
+		
+			if(selectCase == 1 && combat(monsterNumber)){
 				
-				if(selectCase == 1){
-					
-					if(combat(monsterNumber)== false ) {
-						if(escape() == false) {
-							return true;
-						}
-						return false;
+						
+				System.out.println(this.getName() +  " -> buradaki tüm düşmanları öldürdünüz !!");
+				System.out.println(this.getAward().getName() + " ödülünü kazandınız");
+				if(this.getMonster().getAward().getName() == "Para") {
+					this.getPlayer().setMoney(this.getPlayer().getMoney() + this.getMonster().getMoney());
+					System.out.println("Para miktarınız : " + this.getPlayer().getMoney());
+				}else{
+					System.out.println("Envanteri kullanmak istiyor musunuz ? ");
+					System.out.println("1 - Evet \n 2-Hayır");
+					int n = input.nextInt();
+					if(n == 1) {
+						Armors selectedArmor = Armors.getArmorById(this.getAward().getId());
+						this.getPlayer().getInventory().setArmor(selectedArmor);
 					}
-					System.out.println(this.getName() +  " -> buradaki tüm düşmanları öldürdünüz !!");
-					System.out.println(this.getAward().getName() + " ödülünü kazandınız");
+				}
+				if(this.getAward().getName() != "Para") {
 					this.getPlayer().getInventory().inventoryBag(this.getAward().getName());
-					System.out.println("Envanteriler : ");
-					for(int j = 0 ; j <Inventory.inventoryBag.length ; j++) {
-						System.out.print(Inventory.inventoryBag[j] + " ");
-					}
-					
-					return true;
-				
-				}else if(selectCase !=1 && selectCase != 2){
-						while(selectCase !=1 && selectCase != 2) {
-							System.out.println("Geçersiz Değer Girdiniz ! Tekrar giriniz !! ");
-							System.out.print("Girilen Değer : ");
-							selectCase = input.nextInt();
-						}
-					
+				}else {
+					this.getPlayer().setMoney(this.getPlayer().getMoney() + this.getMonster().getMoney());
+					System.out.println("Para miktarınız : " + this.getPlayer().getMoney());
 				}
 				
-				if(this.getPlayer().getHealth()<=0) {
-					System.out.println("Öldünüz!!");
-					
-					break;
+				System.out.println("Envanteriler : ");
+				for(int j = 0 ; j <Inventory.inventoryBag.length ; j++) {
+					System.out.print(Inventory.inventoryBag[j] + " ");
 				}
-				
-				if(selectCase == 2) {
-					return  true;
-				}
+						
+				return true;
+			
+			}else if(selectCase !=1 && selectCase != 2 ){
+				return true;
+			}else if(selectCase == 2) {
+				return true;
 			}
-		return true;
+				
+			if(this.getPlayer().getHealth()<=0) {
+				System.out.println("Öldünüz!!");
+				return false;
+			}
 		
+		return true;	
 	}
+	
+	
 	
 	public boolean combat(int monsterNumber) {
 		int start = randomStart();
@@ -79,74 +84,52 @@ public abstract class BattleLocations  extends Locations{
 			System.out.println("------------------------------------------------------------------ \n");
 			
 			if(start==0) {
-				int k =0;
-				while(this.getPlayer().getHealth()>0 && this.getMonster().getHealth()>0 && k==0) {
-					
+				while(this.getPlayer().getHealth()>0 && this.getMonster().getHealth()>0) {
 						System.out.println();
-						
-						int j =0;
-						while( j== 0) {
-							System.out.println("\n" + this.getMonster().getName() + " vurdu\n");
+						System.out.println("\n" + this.getMonster().getName() + " vurdu\n");
 							
-							int monsterDamage = this.getMonster().getDamage() - this.getPlayer().getArmor().getBlock();
-							if(monsterDamage < 0 ) {
-								monsterDamage = 0;
-							}
-							this.getPlayer().setHealth(this.getPlayer().getHealth() - monsterDamage);
-							afterHit(i);
-							if(this.getPlayer().getHealth()>0) {
-								if(this.getMonster().getHealth()>0) {
-									System.out.println("\n 1 - Vur \n 2 - Kaç  \n");
-									int selectCase= input.nextInt();
-									if(selectCase == 1) {
-										System.out.println("Siz Vurdunuz\n");
-										this.getMonster().setHealth(this.getMonster().getHealth() - this.getPlayer().getTotalDamage());
-										afterHit(i);
-									}else if(selectCase !=1 && selectCase != 2){
-										while(selectCase !=1 && selectCase != 2) {
-										System.out.println("Geçersiz Değer Girdiniz ! Tekrar giriniz !! ");
-										System.out.print("Girilen Değer : ");
-										selectCase = input.nextInt();
-										}
-									}
-						
-									if(selectCase == 2) {
-										
-										return escape(); 
-									}
-								}else {
-									System.out.println("Düşmanı yendiniz !");
-									System.out.println(this.getMonster().getMoney() + " " + this.getMonster().getAward().getName()+ " kazandınız");
-									if(this.getMonster().getAward().getName() == "Para") {
-										this.getPlayer().setMoney(this.getPlayer().getMoney() + this.getMonster().getMoney());
-										System.out.println("Para miktarınız : " + this.getPlayer().getMoney());
-									}else{
-										System.out.println("Envanteri kullanmak istiyor musunuz ? ");
-										System.out.println("1 - Evet \n 2-Hayır");
-										int n = input.nextInt();
-										if(n == 1) {
-											Armors selectedArmor = Armors.getArmorById(this.getAward().getId());
-											this.getPlayer().getInventory().setArmor(selectedArmor);
-										}
-									}
-									j=1;
-									return true;
+						int monsterDamage = this.getMonster().getDamage() - this.getPlayer().getArmor().getBlock();
+						if(monsterDamage < 0 ) {
+							monsterDamage = 0;
+						}
+						this.getPlayer().setHealth(this.getPlayer().getHealth() - monsterDamage);
+						afterHit(i);
+						if(this.getPlayer().getHealth()>0) {
+							if(this.getMonster().getHealth()>0) {
+								System.out.println("\n 1 - Vur \n 2 - Kaç  \n!! GİRİLEN DEĞER YANLIŞ OLURSA KAÇMIŞ SAYILACAKSIN !! ");
+								int selectCase= input.nextInt();
+								if(selectCase == 1) {
+									System.out.println("Siz Vurdunuz\n");
+									this.getMonster().setHealth(this.getMonster().getHealth() - this.getPlayer().getTotalDamage());
+									afterHit(i);
+								}else if(selectCase !=1 && selectCase != 2){
+									return true; 
+								}
+								else if(selectCase == 2) {
+									return true; 
 								}
 							}else {
-								System.out.print("Öldünüz");
-								return false;
+								System.out.println("Düşmanı yendiniz !");
+								System.out.println(this.getMonster().getMoney() + " " + this.getMonster().getAward().getName()+ " kazandınız");
+								if(this.getMonster().getAward().getName() == "Para") {
+									this.getPlayer().setMoney(this.getPlayer().getMoney() + this.getMonster().getMoney());
+									System.out.println("Para miktarınız : " + this.getPlayer().getMoney());
+								}
+					
 							}
+						}else {
+							System.out.print("Öldünüz");
+							return false;
 						}
-				
-				}
+						
+					}
 				
 			}else if(start == 1) {
 				while(this.getPlayer().getHealth()>0 && this.getMonster().getHealth()>0) {
 					System.out.println();
-					int j =0;
-					while( j== 0) {
+					
 						if(this.getPlayer().getHealth()>0) {
-							System.out.println("\n 1 - Vur \n 2 - Kaç  \n");
+							System.out.println("\n 1 - Vur \n 2 - Kaç  \n!! GİRİLEN DEĞER YANLIŞ OLURSA KAÇMIŞ SAYILACAKSIN !! ");
 							int selectCase= input.nextInt();
 						
 							if(selectCase == 1) {
@@ -168,36 +151,38 @@ public abstract class BattleLocations  extends Locations{
 										this.getPlayer().setMoney(this.getPlayer().getMoney() + this.getMonster().getMoney());
 										System.out.println("Para miktarınız : " + this.getPlayer().getMoney());
 									}
-									j=1;
-									return true;
+								
+									
 								}
 							}else if(selectCase !=1 && selectCase != 2){
-								while(selectCase !=1 && selectCase != 2) {
-										System.out.println("Geçersiz Değer Girdiniz ! Tekrar giriniz !! ");
-										System.out.print("Girilen Değer : ");
-										selectCase = input.nextInt();
-								}	
+								return true;	
 							}
-							
-							if(selectCase == 2) {
-								return escape();
+							else if(selectCase == 2) {
+								return true;
 							}
 						}
 						else {
 							System.out.print("Öldünüz");
 							return false;
 						}
-					}
-				}
+						
+				}	
+				
 			}
-			
 		}
+		
+		if(this.getPlayer().getHealth() > 0) {
+			return true;
+		}
+		
 		System.out.println("------------------------------------------------------------------ \n");
 		return false;
 	}
 	
-	public boolean escape() {
-		
+	public boolean escape(int i) {
+		if(i == 1) {
+			return true;
+		}
 		return false;
 	}
 	public void afterHit(int i) {
@@ -212,6 +197,7 @@ public abstract class BattleLocations  extends Locations{
 		for(int j = 0 ; j <Inventory.inventoryBag.length ; j++) {
 			System.out.print(Inventory.inventoryBag[j] + " ");
 		}
+		System.out.println();
 		System.out.println("------" +i+". "+this.getMonster().getName() +" Değerleri-------");
 		System.out.println("Sağlık : " + this.getMonster().getHealth() );
 		System.out.println("Hasar : " + this.getMonster().getDamage());

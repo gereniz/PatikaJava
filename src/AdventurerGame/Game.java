@@ -21,6 +21,7 @@ public class Game {
 			player.showInfo();
 			Locations[] locations = {new SaveHouse(player),new ToolStore(player),new Forest(player),new Cave(player),new River(player),new Mine(player)}; 
 			
+			
 			System.out.println("\n------------------------------------------------------------------ \n");
 			System.out.println("Bölgeler \n");
 			for(Locations location : locations) {
@@ -39,8 +40,33 @@ public class Game {
 						selectLocation = input.nextInt();
 					}
 				}
+				
 				if(selectLocation == location.getId()) {
-					currentLocation = location;
+					for(int i = 0 ; i < Inventory.inventoryBag.length ; i++) {
+						if(location.getName().equals("Mağara") && Inventory.inventoryBag[i] == "Yemek"){
+							System.out.println("Burayı daha önce tamamladın.Tekrar giremezsin !!");
+							System.out.println("Güvenli eve gönderiliyorsun !! ");
+							currentLocation = locations[0];
+							break;
+						}
+						else if(location.getName().equals("Nehir") && Inventory.inventoryBag[i] == "Su"){
+							System.out.println("Burayı daha önce tamamladın.Tekrar giremezsin !!");
+							System.out.println("Güvenli eve gönderiliyorsun !! ");
+							currentLocation = locations[0];
+							break;
+						}
+						else if(location.getName().equals("Orman") && Inventory.inventoryBag[i] == "Odun"){
+							System.out.println("Burayı daha önce tamamladın.Tekrar giremezsin !!");
+							System.out.println("Güvenli eve gönderiliyorsun !! ");
+							currentLocation = locations[0];
+							break;
+						}
+						
+						else {
+							currentLocation = location;
+						}
+					}
+					
 				}
 			}
 			System.out.println();

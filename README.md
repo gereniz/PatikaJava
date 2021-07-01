@@ -84,3 +84,5 @@
 ## Nested Sınıflar,Generic Yapılar
 
 [Ödev - Liste Sınıfı Yapmak](https://github.com/gereniz/PatikaJava/tree/main/src/ListeSinifi)
+
+[Ödev - Kitap Sıralayıcı](https://github.com/gereniz/PatikaJava/tree/main/src/KitapSiralayici)
