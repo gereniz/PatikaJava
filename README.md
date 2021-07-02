@@ -90,7 +90,7 @@
 
 - [Ödev - Kitap Sıralayıcı](https://github.com/gereniz/PatikaJava/tree/main/src/KitapSiralayici)
 
-- [Ödev - Fikstür Oluşturucu]()
+- [Ödev - Fikstür Oluşturucu](https://github.com/gereniz/PatikaJava/tree/main/src/MacFiksturu)
 
 ## MultiTreads ve Concurrency
 
