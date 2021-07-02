@@ -77,12 +77,38 @@
 
 # PatikaJavaOOP
 
-[Üniversite Yönetim Sistemi](https://github.com/gereniz/PatikaJava101/tree/main/src/JavaOOP/UniversiteYonetimSistemi.png)
+- [Üniversite Yönetim Sistemi](https://github.com/gereniz/PatikaJava101/tree/main/src/JavaOOP/UniversiteYonetimSistemi.png)
 
 # PatikaJava102
 
 ## Nested Sınıflar,Generic Yapılar
 
-[Ödev - Liste Sınıfı Yapmak](https://github.com/gereniz/PatikaJava/tree/main/src/ListeSinifi)
+- [Ödev - Liste Sınıfı Yapmak](https://github.com/gereniz/PatikaJava/tree/main/src/ListeSinifi)
 
-[Ödev - Kitap Sıralayıcı](https://github.com/gereniz/PatikaJava/tree/main/src/KitapSiralayici)
+
+## Collection ve Map Interface
+
+- [Ödev - Kitap Sıralayıcı](https://github.com/gereniz/PatikaJava/tree/main/src/KitapSiralayici)
+
+- [Ödev - Fikstür Oluşturucu]()
+
+## MultiTreads ve Concurrency
+
+- [Ödev - Threadlerin Yarışı]()
+
+## Diğer Faydalı Konular
+
+- [Ödev - Kitap Listesi]()
+
+## Pratik
+
+- [Pratik - Macera Oyunu]()
+- [Pratik - Patika Klonu]()
+
+## Ödev 
+- [Ödev - Patika Store](https://github.com/gereniz/PatikaJava/tree/main/src/PatikaStore)
+- [Ödev-Sigorta Yönetim Sistemi]()
+
+## Bitirme Projesi
+
+- [Turizm Acenta Sistemi]()
