@@ -19,6 +19,8 @@ public abstract class BattleLocations  extends Locations{
 	@Override
 	public boolean onLocation() {
 		
+		
+		
 		int monsterNumber = this.randomMonsterNumber();
 		System.out.println("Şu an buradasın-> " + this.getName());
 		System.out.println();
@@ -28,9 +30,15 @@ public abstract class BattleLocations  extends Locations{
 		System.out.print("Girilen Değer : ");
 		int selectCase= input.nextInt();
 		
-			if(selectCase == 1 && combat(monsterNumber)){
-				
-						
+		
+			if(selectCase == 1){
+				boolean combat =combat(monsterNumber);
+				if(combat == false && this.getPlayer().getHealth()>0) {
+					return true;
+				}
+				if(combat == false && this.getPlayer().getHealth()<=0) {
+					return false;
+				}
 				System.out.println(this.getName() +  " -> buradaki tüm düşmanları öldürdünüz !!");
 				System.out.println(this.getAward().getName() + " ödülünü kazandınız");
 				if(this.getMonster().getAward().getName() == "Para") {
@@ -41,8 +49,8 @@ public abstract class BattleLocations  extends Locations{
 					System.out.println("1 - Evet \n 2-Hayır");
 					int n = input.nextInt();
 					if(n == 1) {
-						Armors selectedArmor = Armors.getArmorById(this.getAward().getId());
-						this.getPlayer().getInventory().setArmor(selectedArmor);
+						String selectedArmor = (Armors.getArmorById(this.getAward().getId())).getName();
+						this.getPlayer().getInventory().getArmor().setName(selectedArmor);
 					}
 				}
 				if(this.getAward().getName() != "Para") {
@@ -64,9 +72,10 @@ public abstract class BattleLocations  extends Locations{
 			}else if(selectCase == 2) {
 				return true;
 			}
+			
 				
 			if(this.getPlayer().getHealth()<=0) {
-				System.out.println("Öldünüz!!");
+				
 				return false;
 			}
 		
@@ -103,10 +112,10 @@ public abstract class BattleLocations  extends Locations{
 									this.getMonster().setHealth(this.getMonster().getHealth() - this.getPlayer().getTotalDamage());
 									afterHit(i);
 								}else if(selectCase !=1 && selectCase != 2){
-									return true; 
+									return false;
 								}
 								else if(selectCase == 2) {
-									return true; 
+									return false;
 								}
 							}else {
 								System.out.println("Düşmanı yendiniz !");
@@ -118,7 +127,7 @@ public abstract class BattleLocations  extends Locations{
 					
 							}
 						}else {
-							System.out.print("Öldünüz");
+							System.out.print("Öldünüz.");
 							return false;
 						}
 						
@@ -144,6 +153,10 @@ public abstract class BattleLocations  extends Locations{
 									}
 									this.getPlayer().setHealth(this.getPlayer().getHealth() - monsterDamage);
 									afterHit(i);
+									if(this.getPlayer().getHealth() <= 0) {
+										System.out.print("Öldünüz");
+										return false;
+									}
 								}else {
 									System.out.println("Düşmanı yendiniz !");
 									System.out.println(this.getMonster().getMoney() +" "+ this.getMonster().getAward().getName() + " kazandınız");
@@ -152,17 +165,16 @@ public abstract class BattleLocations  extends Locations{
 										System.out.println("Para miktarınız : " + this.getPlayer().getMoney());
 									}
 								
-									
 								}
 							}else if(selectCase !=1 && selectCase != 2){
-								return true;	
+								return false;	
 							}
 							else if(selectCase == 2) {
-								return true;
+								return false;
 							}
 						}
 						else {
-							System.out.print("Öldünüz");
+							System.out.print("Öldünüz.");
 							return false;
 						}
 						
@@ -179,11 +191,8 @@ public abstract class BattleLocations  extends Locations{
 		return false;
 	}
 	
-	public boolean escape(int i) {
-		if(i == 1) {
-			return true;
-		}
-		return false;
+	public boolean escape() {
+		return true;
 	}
 	public void afterHit(int i) {
 		System.out.println("------Oyuncu Değerleri-------");

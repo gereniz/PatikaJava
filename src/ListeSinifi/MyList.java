@@ -7,22 +7,22 @@ public class MyList <T>{
 	private int capacity;
 
 
-	Object[] list;
-	Object[] listCopy;
+	T[] list;
+	T[] listCopy;
 	
 	public MyList() {
 		super();
 		this.capacity = 10;
-		this.list = new Object[this.capacity];
-		this.listCopy = new Object[this.capacity];
+		this.list = (T[]) new Object[this.capacity];
+		this.listCopy = (T[]) new Object[this.capacity];
 
 	
 	}
 	
 	public MyList(int capacity) {
 		this.capacity = capacity;
-		this.list = new Object[this.capacity];
-		this.listCopy = new Object[this.capacity];
+		this.list = (T[]) new Object[this.capacity];
+		this.listCopy = (T[]) new Object[this.capacity];
 	}
 	
 	//---ekleme
@@ -40,7 +40,7 @@ public class MyList <T>{
 				}
 			}
 			
-			this.list = new Object[this.capacity]; 
+			this.list = (T[]) new Object[this.capacity]; 
 			while(true) {
 				list[j] = listCopy[j];
 				j++;
@@ -48,7 +48,7 @@ public class MyList <T>{
 					break;
 				}
 			}
-			this.listCopy = new Object[this.capacity];
+			this.listCopy = (T[]) new Object[this.capacity];
 		}
 		add(data,count);
 		count++;
@@ -61,9 +61,9 @@ public class MyList <T>{
 	}
 	
 	//---index döndürme
-	public Object get(int value) {
+	public T get(int value) {
 		int size = size();
-		Object i = list[value];
+		T i = list[value];
 		if(value<0 || value >=size) {
 			return null;
 		}
@@ -71,13 +71,10 @@ public class MyList <T>{
 		
 	}
 	//--verilen indexe değer atama
-	public Object set(int index,T value) {
-		int size = size();
-		if(index<0 || index >=size) {
-			return null;
-		}
+	public void set(int index,T value) {
+		
 		list[index] = value;
-		return list;
+		//return list;
 	}
 	//--uzunluk
 	public int size() {
@@ -90,16 +87,14 @@ public class MyList <T>{
 		return size;
 	}
 	//--kaldırma
-	public Object remove(int value) {
+	public void remove(int value) {
 		int size = size();
-		if(value<0 || value >size) {
-			return null;
-		}
+		
 		for(int i = value ; i<size;i++) {
 			list[value] = list[value+1];	
 		}
 		count--;
-		return list;
+		
 	}
 	//--yazdırma
 	public String toString() {
@@ -151,9 +146,9 @@ public class MyList <T>{
 	}
 	
 	//yeni dizi
-	public Object[] toArray() {
+	public T[] toArray() {
 		int size = size();
-		Object[] dizi = new Object[size];
+		T[] dizi = (T[]) new Object[size];
 		for(int i = 0 ; i<size ; i++) {
 			dizi[i] = list[i];
 		}
@@ -184,7 +179,7 @@ public class MyList <T>{
 	
 	//--temizleme
 	public void clear() {
-		this.list = new Object[0];
+		this.list = (T[]) new Object[0];
 		
 		for(int i = 0 ; i<size();i++) {
 			System.out.print(list[i]);

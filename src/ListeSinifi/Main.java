@@ -5,7 +5,7 @@ package ListeSinifi;
 public class Main {
 
 	public static void main(String[] args) {
-		/*
+		
 		MyList<Integer> liste = new MyList<>(9);
         System.out.println("Dizideki Eleman Sayısı : " + liste.size());
         System.out.println("Dizinin Kapasitesi : " + liste.getCapacity());
@@ -24,7 +24,7 @@ public class Main {
         liste.add(110);
         System.out.println("Dizideki Eleman Sayısı : " + liste.size());
         System.out.println("Dizinin Kapasitesi : " + liste.getCapacity());
-        */
+        
 		/*
 		 MyList<Integer> liste = new MyList<>();
 	        liste.add(10);
@@ -36,8 +36,9 @@ public class Main {
 	        liste.set(0, 100);
 	        System.out.println("2. indisteki değer : " + liste.get(2));
 	        System.out.println(liste.toString());
-   		*/
-		
+   		
+		*/
+        /*
 		 MyList<Integer> liste = new MyList<>();
 	        System.out.println("Liste Durumu : " + (liste.isEmpty() ? "Boş" : "Dolu"));
 	        liste.add(10);
@@ -75,7 +76,7 @@ public class Main {
 	        // Listeyi tamamen boşaltır ve varsayılan boyutuna çevirir
 	        liste.clear();
 	        System.out.println(liste.toString());
-		
+		*/
 	
 	}
 

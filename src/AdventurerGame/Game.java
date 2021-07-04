@@ -71,6 +71,7 @@ public class Game {
 			}
 			System.out.println();
 			if(!currentLocation.onLocation()) {
+				System.out.println("Oyunu kaybettiniz");
 				break;
 			}
 		}
