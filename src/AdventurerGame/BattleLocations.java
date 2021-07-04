@@ -44,14 +44,7 @@ public abstract class BattleLocations  extends Locations{
 				if(this.getMonster().getAward().getName() == "Para") {
 					this.getPlayer().setMoney(this.getPlayer().getMoney() + this.getMonster().getMoney());
 					System.out.println("Para miktarınız : " + this.getPlayer().getMoney());
-				}else{
-					System.out.println("Envanteri kullanmak istiyor musunuz ? ");
-					System.out.println("1 - Evet \n 2-Hayır");
-					int n = input.nextInt();
-					if(n == 1) {
-						String selectedArmor = (Armors.getArmorById(this.getAward().getId())).getName();
-						this.getPlayer().getInventory().getArmor().setName(selectedArmor);
-					}
+				
 				}
 				if(this.getAward().getName() != "Para") {
 					this.getPlayer().getInventory().inventoryBag(this.getAward().getName());
