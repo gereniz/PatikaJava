@@ -94,15 +94,15 @@
 
 ## MultiTreads ve Concurrency
 
-- [Ödev - Threadlerin Yarışı]()
+- [Ödev - Threadlerin Yarışı](https://github.com/gereniz/PatikaJava/tree/main/src/ThreadlerinYarisi)
 
 ## Diğer Faydalı Konular
 
-- [Ödev - Kitap Listesi]()
+- [Ödev - Kitap Listesi](https://github.com/gereniz/PatikaJava/tree/main/src/KitapListesi)
 
 ## Pratik
 
-- [Pratik - Macera Oyunu]()
+- [Pratik - Macera Oyunu](https://github.com/gereniz/PatikaJava/tree/main/src/AdventurerGame)
 - [Pratik - Patika Klonu]()
 
 ## Ödev 
