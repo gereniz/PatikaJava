@@ -100,11 +100,11 @@
 ## Pratik
 
 - [Pratik - Macera Oyunu](https://github.com/gereniz/PatikaJava/tree/main/src/AdventurerGame)
-- [Pratik - Patika Klonu]()
+- [Pratik - Patika Klonu](https://github.com/gereniz/PatikaJava/tree/main/src/PatikaKlonu)
 
 ## Ödev 
 - [Ödev - Patika Store](https://github.com/gereniz/PatikaJava/tree/main/src/PatikaStore)
-- [Ödev-Sigorta Yönetim Sistemi]()
+- [Ödev-Sigorta Yönetim Sistemi](https://github.com/gereniz/PatikaJava/tree/main/src/SigortaYonetimSistemi)
 
 ## Bitirme Projesi
 
