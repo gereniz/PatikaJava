@@ -75,9 +75,6 @@
 
 - [Mayın Tarlası Oyunu](https://github.com/gereniz/PatikaJava/tree/main/src/MineSweeper_BITIRMEPROJESI)
 
-# PatikaJavaOOP
-
-- [Üniversite Yönetim Sistemi](https://github.com/gereniz/PatikaJava101/tree/main/src/JavaOOP/UniversiteYonetimSistemi.png)
 
 # PatikaJava102
 
